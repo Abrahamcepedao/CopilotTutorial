@@ -1,22 +1,31 @@
+#create a function that prints the first 150 prime numbers
+def print_primes():
+    #create a list of the first 150 prime numbers
+    primes = []
+    i = 2
+    while len(primes) < 150:
+        is_prime = True
+        for prime in primes:
+            if i % prime == 0:
+                is_prime = False
+                break
+        if is_prime:
+            primes.append(i)
+        i += 1
+
+    #print the list of prime numbers
+    print(primes)
+
+
 '''
-Create a program that generates a random number between 1 and 10 and lets the user guess what number was generated. The pogram should indicate if the guess value was too low or too high. If the user guesses correctly, the program should print a congratulatory message.
+    q: What is the purpose of machine learning?
+    a: To make predictions based on data
+
+    q: What is the purpose of a machine learning model?
+    a: To make predictions based on data
+
+    q: What is the purpose of a machine learning algorithm?
+    a: To make predictions based on data
+
+
 '''
-
-import random
-
-def main():
-    print("Guess a number between 1 and 10")
-    random_number = random.randint(1,10)
-    while True:
-        guess = int(input("Enter your guess: "))
-        if guess == random_number:
-            print("You guessed correctly!")
-            break
-        elif guess < random_number:
-            print("Your guess is too low")
-        else:
-            print("Your guess is too high")
-
-if __name__ == "__main__":
-    main()
-
